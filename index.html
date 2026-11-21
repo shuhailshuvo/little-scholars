@@ -1,23 +1,2054 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff3d9">
-<title>Little Scholars | Learn, Play & Grow</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#30265f;--muted:#7d76a1;--cream:#fff8e9;--pink:#ff8fc7;--purple:#9a85ff;--blue:#76c9f8;--green:#8edcae;--yellow:#ffd56b;--orange:#ffad83;--shadow:0 12px 32px #55458a12;--border:#eee8ff}
-*{box-sizing:border-box}body{margin:0;color:var(--ink);background:linear-gradient(135deg,#fff8e9,#f8f4ff 55%,#f0fbff);font-family:Nunito,system-ui,sans-serif}button{font:inherit;cursor:pointer;border:0}a{color:inherit;text-decoration:none}.wrap{max-width:1200px;margin:auto;padding:20px 24px 70px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px;font-family:'Baloo 2';font-weight:800;font-size:27px}.logo{width:50px;height:50px;display:grid;place-items:center;border-radius:17px;background:linear-gradient(135deg,#ffd86f,#ff9bc9);font-size:26px;box-shadow:0 5px 0 #f2c1d9}.nav{display:flex;gap:8px;align-items:center}.nav button{background:transparent;color:var(--muted);padding:10px 14px;border-radius:14px;font-weight:800}.nav button.active,.nav button:hover{background:#fff;color:var(--ink);box-shadow:var(--shadow)}.profile{display:flex;align-items:center;gap:9px;background:white;border:1px solid var(--border);border-radius:18px;padding:8px 12px;font-weight:800}.avatar{width:34px;height:34px;display:grid;place-items:center;background:#ffe3a0;border-radius:12px;font-size:20px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:20px;background:linear-gradient(115deg,#ffe7a9,#ffd9ec 65%,#dceeff);border-radius:32px;padding:34px;overflow:hidden;position:relative;box-shadow:var(--shadow)}.hero:after{content:'✦  ✧  ★';position:absolute;right:20px;top:14px;color:#fff9;font-size:42px;letter-spacing:15px}.hero h1{font:800 clamp(32px,4vw,48px)/1.05 'Baloo 2';margin:8px 0 12px;max-width:600px}.hero p{font-size:17px;color:#62567d;font-weight:700;max-width:500px}.eyebrow{font-weight:900;letter-spacing:1.3px;text-transform:uppercase;font-size:12px;color:#846db5}.hero-art{display:grid;place-items:center;font-size:clamp(90px,14vw,150px);filter:drop-shadow(0 10px 0 #fff7);transform:rotate(4deg)}.primary{background:var(--ink);color:white;padding:13px 20px;border-radius:16px;font-weight:900;box-shadow:0 5px 0 #1f1947;transition:.15s}.primary:hover{transform:translateY(-2px)}.section{margin-top:30px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:16px}.section h2{font:800 27px 'Baloo 2';margin:0}.section-head p{color:var(--muted);font-weight:700;margin:4px 0 0}.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.class-card{border:2px solid transparent;border-radius:24px;padding:18px;background:white;box-shadow:var(--shadow);transition:.18s;cursor:pointer;min-height:150px}.class-card:hover,.class-card.selected{transform:translateY(-3px);border-color:var(--purple)}.class-card .emoji{font-size:35px}.class-card h3{font:800 22px 'Baloo 2';margin:8px 0 2px}.class-card p{margin:0;color:var(--muted);font-size:13px;font-weight:800}.class-card.pg{background:#fff0f7}.class-card.nur{background:#effaff}.class-card.kg{background:#f4f0ff}.class-card.one{background:#f1fff4}.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.subject{display:flex;align-items:center;gap:14px;background:white;padding:17px;border:1px solid var(--border);border-radius:21px;box-shadow:var(--shadow)}.subject .icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:#fff1cb}.subject h3{margin:0;font:800 18px 'Baloo 2'}.subject small{color:var(--muted);font-weight:800}.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.activity{background:white;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.activity-cover{height:145px;display:grid;place-items:center;font-size:70px;background:linear-gradient(135deg,#ffe7ad,#ffd4ec)}.activity-body{padding:17px}.tag{display:inline-block;background:#f2edff;color:#7362b2;border-radius:99px;padding:5px 10px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}.activity h3{font:800 20px 'Baloo 2';margin:9px 0 4px}.activity p{color:var(--muted);font-weight:700;font-size:14px;margin:0 0 14px}.activity .primary{width:100%}.progress-panel{display:grid;grid-template-columns:1fr 1fr;gap:16px}.progress-card{background:white;border:1px solid var(--border);border-radius:24px;padding:20px;box-shadow:var(--shadow)}.progress-top{display:flex;justify-content:space-between;align-items:center;font-weight:900}.bar{height:12px;background:#eee9ff;border-radius:20px;overflow:hidden;margin-top:12px}.bar span{display:block;height:100%;background:linear-gradient(90deg,#ff9acb,#a18aff);border-radius:20%;width:35%}.stars{display:flex;gap:5px;font-size:27px;margin-top:10px}.footer{text-align:center;color:var(--muted);font-weight:800;margin-top:40px}.mobile-menu{display:none}
-@media(max-width:900px){.nav{display:none}.classes{grid-template-columns:repeat(2,1fr)}.subjects,.activity-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr .55fr}.progress-panel{grid-template-columns:1fr}}
-@media(max-width:600px){.wrap{padding:14px 14px 50px}.topbar{flex-wrap:wrap}.brand{font-size:23px}.profile{margin-left:auto}.hero{padding:24px;grid-template-columns:1fr}.hero-art{display:none}.hero h1{font-size:35px}.classes{gap:10px}.class-card{padding:14px;min-height:135px}.subjects,.activity-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
-</style></head>
-<body><div class="wrap">
-<header class="topbar"><a class="brand" href="#home"><span class="logo">🌈</span><span>Little Scholars</span></a><nav class="nav"><button class="active" data-scroll="home">Home</button><button data-scroll="classes">My Classes</button><button data-scroll="subjects">Subjects</button><button data-scroll="activities">Fun & Games</button><button data-scroll="progress">My Progress</button></nav><div class="profile"><span class="avatar">🧒</span><span>Little Learner</span><span>⭐ 12</span></div></header>
-<section class="hero" id="home"><div><span class="eyebrow">A little learning, a lot of fun</span><h1>Ready to learn<br>something magical?</h1><p>Explore, play, discover and grow every day. Your next adventure is waiting!</p><button class="primary" onclick="document.getElementById('classes').scrollIntoView({behavior:'smooth'})">Let's Explore ✨</button></div><div class="hero-art" aria-hidden="true">🦋📚</div></section>
-<section class="section" id="classes"><div class="section-head"><div><h2>Choose your class</h2><p>Pick your learning level to get started.</p></div></div><div class="classes"><article class="class-card pg selected" data-class="Play Group"><div class="emoji">🐣</div><h3>Play Group</h3><p>Colors, shapes & first steps</p></article><article class="class-card nur" data-class="Nursery"><div class="emoji">🐻</div><h3>Nursery</h3><p>Letters, counting & words</p></article><article class="class-card kg" data-class="KG"><div class="emoji">🦄</div><h3>KG</h3><p>Phonics, reading & discovery</p></article><article class="class-card one" data-class="Class 1"><div class="emoji">🚀</div><h3>Class 1</h3><p>English, math & science</p></article></div></section>
-<section class="section" id="subjects"><div class="section-head"><div><h2>Explore subjects</h2><p>Little lessons for curious minds.</p></div></div><div class="subjects"><article class="subject"><div class="icon">🔤</div><div><h3>English</h3><small>Letters, words & stories</small></div></article><article class="subject"><div class="icon">🔢</div><div><h3>Mathematics</h3><small>Numbers, shapes & patterns</small></div></article><article class="subject"><div class="icon">🌱</div><div><h3>Science</h3><small>Discover the world around us</small></div></article><article class="subject"><div class="icon">🌍</div><div><h3>General Knowledge</h3><small>People, places & animals</small></div></article><article class="subject"><div class="icon">🎨</div><div><h3>Art & Creativity</h3><small>Draw, make & imagine</small></div></article><article class="subject"><div class="icon">🎵</div><div><h3>Rhymes & Music</h3><small>Sing and move along</small></div></article></div></section>
-<section class="section" id="activities"><div class="section-head"><div><h2>Play & learn</h2><p>Interactive activities to make learning memorable.</p></div></div><div class="activity-grid"><article class="activity"><div class="activity-cover">🌳🦋🌼</div><div class="activity-body"><span class="tag">Interactive world</span><h3>Naymaan's Wonder World</h3><p>Explore a magical world of games, stories, puzzles and discoveries.</p><a class="primary" href="naymaans_wonder_world.html">Play Now ▶</a></div></article><article class="activity"><div class="activity-cover" style="background:linear-gradient(135deg,#d8f3ff,#e4ddff)">🍎🔢</div><div class="activity-body"><span class="tag">Mathematics</span><h3>Counting Adventure</h3><p>Practice counting with colorful objects and fun challenges.</p><button class="primary" onclick="alert('Counting Adventure is coming soon!')">Start Adventure</button></div></article><article class="activity"><div class="activity-cover" style="background:linear-gradient(135deg,#dfffe8,#fff0b9)">🐯🐘🦒</div><div class="activity-body"><span class="tag">Discovery</span><h3>Animal Quiz</h3><p>Meet animals and test what you know about them.</p><button class="primary" onclick="alert('Animal Quiz is coming soon!')">Take Quiz</button></div></article></div></section>
-<section class="section" id="progress"><div class="section-head"><div><h2>Your learning journey</h2><p>Every little step is a big achievement!</p></div></div><div class="progress-panel"><article class="progress-card"><div class="progress-top"><span>🌟 Learning progress</span><span>35%</span></div><div class="bar"><span></span></div><p style="color:var(--muted);font-weight:800;margin-bottom:0">Keep exploring to fill your progress bar.</p></article><article class="progress-card"><div class="progress-top"><span>🏆 Your rewards</span><span>12 stars</span></div><div class="stars">⭐ ⭐ ⭐ ⭐ ☆</div><p style="color:var(--muted);font-weight:800;margin-bottom:0">Earn stars every time you finish an activity.</p></article></div></section>
-<footer class="footer">Made for curious little minds 💛 · Little Scholars</footer></div>
-<script>
-const classCards=document.querySelectorAll('.class-card');classCards.forEach(card=>card.addEventListener('click',()=>{classCards.forEach(c=>c.classList.remove('selected'));card.classList.add('selected');document.querySelector('#activities .section-head p').textContent=`Activities for ${card.dataset.class} learners. More lessons are coming soon!`}));document.querySelectorAll('.nav button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.scroll).scrollIntoView({behavior:'smooth'})}));
-</script></body></html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#fff3d9">
+    <title>Little Scholars | Cambridge Curriculum Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #30265f;
+            --muted: #7d76a1;
+            --cream: #fff8e9;
+            --pink: #ff8fc7;
+            --purple: #9a85ff;
+            --blue: #76c9f8;
+            --green: #8edcae;
+            --yellow: #ffd56b;
+            --orange: #ffad83;
+            --shadow: 0 12px 32px #55458a12;
+            --shadow-hover: 0 16px 36px rgba(85, 69, 138, 0.16);
+            --border: #eee8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: linear-gradient(135deg, #fff8e9, #f8f4ff 55%, #f0fbff);
+            font-family: 'Nunito', system-ui, sans-serif;
+            line-height: 1.4;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+            border: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 24px 70px;
+        }
+
+        /* Topbar */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 26px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 800;
+            font-size: 27px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            background: linear-gradient(135deg, #ffd86f, #ff9bc9);
+            font-size: 26px;
+            box-shadow: 0 5px 0 #f2c1d9;
+        }
+
+        .nav {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav button {
+            background: transparent;
+            color: var(--muted);
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-weight: 800;
+            transition: all .15s ease;
+        }
+
+        .nav button.active,
+        .nav button:hover {
+            background: #fff;
+            color: var(--ink);
+            box-shadow: var(--shadow);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 8px 12px;
+            font-weight: 800;
+        }
+
+        .avatar {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            background: #ffe3a0;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr;
+            gap: 20px;
+            background: linear-gradient(115deg, #ffe7a9, #ffd9ec 65%, #dceeff);
+            border-radius: 32px;
+            padding: 34px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .hero:after {
+            content: '✦  ✧  ★';
+            position: absolute;
+            right: 20px;
+            top: 14px;
+            color: #fff9;
+            font-size: 42px;
+            letter-spacing: 15px;
+        }
+
+        .hero h1 {
+            font: 800 clamp(32px, 4vw, 48px)/1.05 'Baloo 2', sans-serif;
+            margin: 8px 0 12px;
+            max-width: 600px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #62567d;
+            font-weight: 700;
+            max-width: 500px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 900;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #846db5;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 4px 10px;
+            border-radius: 99px;
+        }
+
+        .hero-art {
+            display: grid;
+            place-items: center;
+            font-size: clamp(90px, 14vw, 150px);
+            filter: drop-shadow(0 10px 0 #fff7);
+            transform: rotate(4deg);
+        }
+
+        .primary {
+            background: var(--ink);
+            color: white;
+            padding: 13px 20px;
+            border-radius: 16px;
+            font-weight: 900;
+            box-shadow: 0 5px 0 #1f1947;
+            transition: .15s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .primary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Section common */
+        .section {
+            margin-top: 36px;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font: 800 28px 'Baloo 2', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-weight: 700;
+            margin: 4px 0 0;
+        }
+
+        /* Classes */
+        .classes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .class-card {
+            border: 3px solid transparent;
+            border-radius: 24px;
+            padding: 20px;
+            background: white;
+            box-shadow: var(--shadow);
+            transition: all .2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            min-height: 165px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card:hover {
+            transform: translateY(-4px);
+            border-color: #d1c4ff;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .class-card.selected {
+            transform: translateY(-5px);
+            border-color: #7957ff;
+            box-shadow: 0 16px 36px rgba(121, 87, 255, 0.22);
+        }
+
+        .class-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .class-card .emoji {
+            font-size: 38px;
+            line-height: 1;
+        }
+
+        .class-stage-pill {
+            font-size: 11px;
+            font-weight: 900;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #6a539e;
+            border: 1px solid rgba(106, 83, 158, 0.15);
+            letter-spacing: .3px;
+            text-transform: uppercase;
+        }
+
+        .class-card.selected .class-stage-pill {
+            background: #7957ff;
+            color: white;
+            border-color: #7957ff;
+        }
+
+        .class-card h3 {
+            font: 800 23px 'Baloo 2', sans-serif;
+            margin: 4px 0 2px;
+            color: var(--ink);
+        }
+
+        .class-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .class-card.pg {
+            background: #fff2f8;
+        }
+
+        .class-card.nur {
+            background: #eff8ff;
+        }
+
+        .class-card.kg {
+            background: #f6f1ff;
+        }
+
+        .class-card.one {
+            background: #f0fbf3;
+        }
+
+        /* Cambridge Curriculum Badges */
+        .curriculum-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: linear-gradient(135deg, #eef1ff, #fbf0ff);
+            border: 1px solid #dcd2ff;
+            color: #5c3eb3;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .4px;
+        }
+
+        .curriculum-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #7957ff;
+            animation: pulse-dot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .6;
+                transform: scale(1.2);
+            }
+        }
+
+        .curriculum-desc-bar {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 12px 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 16px rgba(85, 69, 138, 0.04);
+        }
+
+        .curriculum-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .curriculum-icon-tag {
+            background: #f1ecff;
+            color: #6347bb;
+            font-size: 12px;
+            font-weight: 900;
+            padding: 4px 10px;
+            border-radius: 8px;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+
+        .curriculum-text {
+            font-weight: 700;
+            font-size: 14px;
+            color: #5d537a;
+        }
+
+        .curriculum-count {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--muted);
+            background: #f9f7ff;
+            padding: 5px 12px;
+            border-radius: 10px;
+        }
+
+        /* Subjects Grid */
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            transition: opacity .18s ease;
+        }
+
+        .subject {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 22px;
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            transition: all .2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+            border-color: #9a85ff;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .subject-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .subject .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            transition: transform .2s ease;
+        }
+
+        .subject:hover .icon {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .subject-head-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .subject-area {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            margin-bottom: 4px;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .subject h3 {
+            margin: 0;
+            font: 800 20px/1.2 'Baloo 2', sans-serif;
+            color: var(--ink);
+        }
+
+        .subject-summary {
+            color: #645a80;
+            font-size: 13.5px;
+            font-weight: 600;
+            line-height: 1.45;
+            margin: 0 0 14px;
+            flex-grow: 1;
+        }
+
+        .subject-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+            margin-bottom: 14px;
+        }
+
+        .topic-tag {
+            background: #f4f0ff;
+            color: #6752aa;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 8px;
+        }
+
+        .subject-play {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e6f8ee;
+            color: #1d7549;
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+
+        .subject-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px dashed #eee8ff;
+            font-size: 12.5px;
+            font-weight: 800;
+            color: #7957ff;
+        }
+
+        .subject-foot-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform .15s ease;
+        }
+
+        .subject:hover .subject-foot-action {
+            transform: translateX(3px);
+        }
+
+        /* Activities Grid */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .activity {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .activity-cover {
+            height: 145px;
+            display: grid;
+            place-items: center;
+            font-size: 70px;
+            background: linear-gradient(135deg, #ffe7ad, #ffd4ec);
+        }
+
+        .activity-body {
+            padding: 17px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f2edff;
+            color: #7362b2;
+            border-radius: 99px;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+        }
+
+        .activity h3 {
+            font: 800 20px 'Baloo 2', sans-serif;
+            margin: 9px 0 4px;
+        }
+
+        .activity p {
+            color: var(--muted);
+            font-weight: 700;
+            font-size: 14px;
+            margin: 0 0 14px;
+        }
+
+        .activity .primary {
+            width: 100%;
+        }
+
+        /* Progress */
+        .progress-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .progress-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 900;
+        }
+
+        .bar {
+            height: 12px;
+            background: #eee9ff;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, #ff9acb, #a18aff);
+            border-radius: 20px;
+            width: 35%;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            font-size: 27px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: var(--muted);
+            font-weight: 800;
+            margin-top: 45px;
+            font-size: 14px;
+        }
+
+        /* Cambridge Subject Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 22, 58, 0.65);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .2s ease;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: white;
+            width: 100%;
+            max-width: 620px;
+            max-height: 88vh;
+            overflow-y: auto;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 24px 60px rgba(36, 26, 68, 0.3);
+            transform: translateY(20px) scale(0.96);
+            transition: all .24s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .modal-overlay.open .modal-card {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-head-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .modal-close-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f4efff;
+            color: var(--ink);
+            font-size: 22px;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            border: 0;
+            cursor: pointer;
+            transition: background .15s, transform .15s;
+            flex-shrink: 0;
+        }
+
+        .modal-close-btn:hover {
+            background: #e6dbff;
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            margin: 4px 0 0;
+            font: 800 24px 'Baloo 2', sans-serif;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .modal-section-title {
+            font: 800 16px 'Baloo 2', sans-serif;
+            color: var(--ink);
+            margin: 18px 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .modal-strands {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 14px;
+        }
+
+        .strand-pill {
+            background: #f2ecff;
+            color: #634bb0;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 11px;
+            border-radius: 999px;
+            border: 1px solid #e2d7ff;
+        }
+
+        .modal-objectives-list {
+            margin: 0;
+            padding-left: 20px;
+            color: #554874;
+            font-size: 14.5px;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .modal-objectives-list li {
+            margin-bottom: 8px;
+        }
+
+        .modal-activity-box {
+            background: linear-gradient(135deg, #fff7e4, #fff0f7);
+            border: 2px dashed #ffcda5;
+            border-radius: 20px;
+            padding: 16px 20px;
+            margin-top: 20px;
+        }
+
+        .modal-activity-box h4 {
+            margin: 0 0 6px;
+            font: 800 16px 'Baloo 2', sans-serif;
+            color: #925800;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .modal-activity-box p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+            color: #6d4b14;
+            line-height: 1.5;
+        }
+
+        .modal-games {
+            background: linear-gradient(135deg, #eafaf1, #e8f3ff);
+            border: 2px dashed #a6dcc0;
+            border-radius: 20px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+
+        .modal-games h4 {
+            margin: 0 0 10px;
+            font: 800 16px 'Baloo 2', sans-serif;
+            color: #1d6b45;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .game-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .game-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 10px 14px;
+            box-shadow: var(--shadow);
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+
+        .game-link:hover,
+        .game-link:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            outline: 3px solid #9a85ff;
+            outline-offset: 2px;
+        }
+
+        .game-link .game-icon {
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: #f4f0ff;
+            font-size: 26px;
+        }
+
+        .game-link .game-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .game-link strong {
+            display: block;
+            font: 800 17px/1.2 'Baloo 2', sans-serif;
+        }
+
+        .game-link small {
+            display: block;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .game-link .game-go {
+            font-weight: 900;
+            color: #7957ff;
+            white-space: nowrap;
+        }
+
+        /* Animations */
+        @keyframes fadeInCards {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade {
+            animation: fadeInCards .28s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+
+            .classes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .subjects,
+            .activity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                grid-template-columns: 1fr .55fr;
+            }
+
+            .progress-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrap {
+                padding: 14px 14px 50px;
+            }
+
+            .topbar {
+                flex-wrap: wrap;
+            }
+
+            .brand {
+                font-size: 23px;
+            }
+
+            .profile {
+                margin-left: auto;
+            }
+
+            .hero {
+                padding: 24px;
+                grid-template-columns: 1fr;
+            }
+
+            .hero-art {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .classes {
+                gap: 10px;
+            }
+
+            .class-card {
+                padding: 14px;
+                min-height: 140px;
+            }
+
+            .subjects,
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-head {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .curriculum-desc-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .modal-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Topbar -->
+        <header class="topbar">
+            <a class="brand" href="#home">
+                <span class="logo">🌈</span>
+                <span>Little Scholars</span>
+            </a>
+            <nav class="nav">
+                <button class="active" data-scroll="home">Home</button>
+                <button data-scroll="classes">My Classes</button>
+                <button data-scroll="subjects">Subjects</button>
+                <button data-scroll="activities">Fun & Games</button>
+                <button data-scroll="progress">My Progress</button>
+            </nav>
+            <div class="profile">
+                <span class="avatar">🧒</span>
+                <span>Little Learner</span>
+                <span>⭐ 12</span>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div>
+                <span class="eyebrow">🎓 Cambridge Curriculum Aligned</span>
+                <h1>Ready to learn<br>something magical?</h1>
+                <p>Explore official Cambridge Early Years and Cambridge Primary subjects. Discover, play, and grow every
+                    day!</p>
+                <button class="primary"
+                    onclick="document.getElementById('classes').scrollIntoView({behavior:'smooth'})">
+                    Let's Explore ✨
+                </button>
+            </div>
+            <div class="hero-art" aria-hidden="true">🦋📚</div>
+        </section>
+
+        <!-- Classes Section -->
+        <section class="section" id="classes">
+            <div class="section-head">
+                <div>
+                    <h2>
+                        Choose your class
+                        <span class="curriculum-badge"><span class="dot"></span> Cambridge International</span>
+                    </h2>
+                    <p>Select your learning level to explore its official Cambridge curriculum subjects.</p>
+                </div>
+            </div>
+            <div class="classes">
+                <article class="class-card pg selected" data-class="Play Group" role="button" tabindex="0"
+                    aria-label="Select Play Group, Cambridge Early Years Stage 1">
+                    <div class="class-card-top">
+                        <div class="emoji">🐣</div>
+                        <span class="class-stage-pill">CEY Stage 1</span>
+                    </div>
+                    <h3>Play Group</h3>
+                    <p>Ages 2–3 · Cambridge Early Years</p>
+                </article>
+
+                <article class="class-card nur" data-class="Nursery" role="button" tabindex="0"
+                    aria-label="Select Nursery, Cambridge Early Years Stage 2">
+                    <div class="class-card-top">
+                        <div class="emoji">🐻</div>
+                        <span class="class-stage-pill">CEY Stage 2</span>
+                    </div>
+                    <h3>Nursery</h3>
+                    <p>Ages 3–4 · Cambridge Early Years</p>
+                </article>
+
+                <article class="class-card kg" data-class="KG" role="button" tabindex="0"
+                    aria-label="Select KG, Cambridge Early Years Stage 3">
+                    <div class="class-card-top">
+                        <div class="emoji">🦄</div>
+                        <span class="class-stage-pill">CEY Stage 3</span>
+                    </div>
+                    <h3>KG</h3>
+                    <p>Ages 4–5 · Cambridge Early Years</p>
+                </article>
+
+                <article class="class-card one" data-class="Class 1" role="button" tabindex="0"
+                    aria-label="Select Class 1, Cambridge Primary Stage 1">
+                    <div class="class-card-top">
+                        <div class="emoji">🚀</div>
+                        <span class="class-stage-pill">Primary Stage 1</span>
+                    </div>
+                    <h3>Class 1</h3>
+                    <p>Ages 5–6 · Cambridge Primary</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Subjects Section -->
+        <section class="section" id="subjects">
+            <div class="section-head">
+                <div>
+                    <h2>
+                        Explore subjects
+                        <span class="curriculum-badge" id="subjects-badge"><span class="dot"></span> Cambridge Early
+                            Years</span>
+                    </h2>
+                    <p id="subjects-subtitle">Official Cambridge curriculum subjects for Play Group learners.</p>
+                </div>
+            </div>
+
+            <!-- Curriculum info banner -->
+            <div class="curriculum-desc-bar" id="curriculum-bar">
+                <div class="curriculum-info">
+                    <span class="curriculum-icon-tag" id="curriculum-stage-tag">CEY Stage 1</span>
+                    <span class="curriculum-text" id="curriculum-framework-desc">Sensory exploration, early listening,
+                        movement & playful discovery.</span>
+                </div>
+                <div class="curriculum-count" id="curriculum-count">6 Learning Areas</div>
+            </div>
+
+            <!-- Dynamic Subjects Container -->
+            <div class="subjects" id="subjects-container" aria-live="polite">
+                <!-- Populated by JavaScript based on selected class -->
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section class="section" id="activities">
+            <div class="section-head">
+                <div>
+                    <h2>Play & learn</h2>
+                    <p id="activities-subtitle">Interactive activities for Play Group learners following Cambridge
+                        standards.</p>
+                </div>
+            </div>
+            <div class="activity-grid">
+                <article class="activity">
+                    <div class="activity-cover">🌳🦋🌼</div>
+                    <div class="activity-body">
+                        <span class="tag">Interactive World</span>
+                        <h3>Tiya's Learning Park</h3>
+                        <p>Explore a playful learning park full of songs, rhymes, and interactive discovery.</p>
+                        <a class="primary" href="play.html">Play Now ▶</a>
+                    </div>
+                </article>
+
+                <article class="activity">
+                    <div class="activity-cover" style="background:linear-gradient(135deg,#d8f3ff,#e4ddff)">🎪🎈🍎</div>
+                    <div class="activity-body">
+                        <span class="tag">Cambridge Math</span>
+                        <h3>Counting Carnival</h3>
+                        <p>Pop balloons, count fruit, spot shapes, and win prizes at the fair.</p>
+                        <a class="primary" href="Counting_Carnival.html">Visit the Carnival ▶</a>
+                    </div>
+                </article>
+
+                <article class="activity">
+                    <div class="activity-cover" style="background:linear-gradient(135deg,#dff6ff,#d9f7e6)">🏝️🎶🦉</div>
+                    <div class="activity-body">
+                        <span class="tag">Language & Literacy</span>
+                        <h3>Chatterbox Island</h3>
+                        <p>Listen, talk, and play with rhymes, sounds, picture talk, and stories. No reading needed.</p>
+                        <a class="primary" href="Chatterbox_Island.html">Explore the Island ▶</a>
+                    </div>
+                </article>
+
+                <article class="activity">
+                    <div class="activity-cover" style="background:linear-gradient(135deg,#ffe3f2,#fff0b9)">🏡😊💛</div>
+                    <div class="activity-body">
+                        <span class="tag">Personal & Social</span>
+                        <h3>Kindness Village</h3>
+                        <p>Share feelings, make friends, and learn to be calm, kind, and caring.</p>
+                        <a class="primary" href="Kindness_Village.html">Enter the Village ▶</a>
+                    </div>
+                </article>
+
+                <article class="activity">
+                    <div class="activity-cover" style="background:linear-gradient(135deg,#dfffe8,#fff0b9)">🐯🐘🦒</div>
+                    <div class="activity-body">
+                        <span class="tag">Understanding the World</span>
+                        <h3 id="activity-world-title">Animal & Nature Quiz</h3>
+                        <p id="activity-world-desc">Discover animals, plant life, and sounds with Cambridge enquiry
+                            questions.</p>
+                        <button class="primary" onclick="alert('Animal & Nature Quiz is opening soon!')">Take
+                            Quiz</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="section" id="progress">
+            <div class="section-head">
+                <div>
+                    <h2>Your learning journey</h2>
+                    <p>Every little step is a big achievement in the Cambridge pathway!</p>
+                </div>
+            </div>
+            <div class="progress-panel">
+                <article class="progress-card">
+                    <div class="progress-top">
+                        <span>🌟 Learning progress</span>
+                        <span>35%</span>
+                    </div>
+                    <div class="bar"><span></span></div>
+                    <p style="color:var(--muted);font-weight:800;margin-bottom:0;margin-top:10px">
+                        Keep exploring Cambridge subjects to fill your progress bar.
+                    </p>
+                </article>
+
+                <article class="progress-card">
+                    <div class="progress-top">
+                        <span>🏆 Your rewards</span>
+                        <span>12 stars</span>
+                    </div>
+                    <div class="stars">⭐ ⭐ ⭐ ⭐ ☆</div>
+                    <p style="color:var(--muted);font-weight:800;margin-bottom:0;margin-top:10px">
+                        Earn stars every time you complete a Cambridge activity.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <footer class="footer">
+            Cambridge Curriculum Learning Portal 💛 · Little Scholars &copy; 2026
+        </footer>
+    </div>
+
+    <!-- Cambridge Subject Detail Modal Dialog -->
+    <div class="modal-overlay" id="subject-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-card">
+            <div class="modal-head">
+                <div class="modal-head-left">
+                    <div class="modal-icon" id="modal-icon">📚</div>
+                    <div>
+                        <span class="curriculum-badge" id="modal-stage-badge" style="margin-bottom:4px"><span
+                                class="dot"></span> Cambridge Early Years</span>
+                        <h3 class="modal-title" id="modal-title">Subject Title</h3>
+                    </div>
+                </div>
+                <button class="modal-close-btn" id="modal-close" aria-label="Close dialog">&times;</button>
+            </div>
+
+            <p id="modal-summary" style="color:#5c5079;font-weight:600;font-size:15px;line-height:1.5;margin:0 0 16px">
+            </p>
+
+            <div class="modal-section-title">
+                <span>🎯</span> Cambridge Curriculum Strands
+            </div>
+            <div class="modal-strands" id="modal-strands"></div>
+
+            <div class="modal-section-title">
+                <span>📝</span> Key Learning Objectives
+            </div>
+            <ul class="modal-objectives-list" id="modal-objectives"></ul>
+
+            <div class="modal-activity-box">
+                <h4><span>💡</span> Cambridge Classroom & Play Activity</h4>
+                <p id="modal-activity"></p>
+            </div>
+
+            <div class="modal-games" id="modal-games" hidden>
+                <h4><span>🎮</span> Play & practise this</h4>
+                <div class="game-links" id="modal-game-links"></div>
+            </div>
+
+            <div style="margin-top:22px;display:flex;justify-content:flex-end">
+                <button class="primary" onclick="closeSubjectModal()">Got It, Let's Learn! ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Official Cambridge International Curriculum Framework Data
+         * - Cambridge Early Years (CEY) Stages 1, 2, 3: 6 Learning & Development Areas
+         * - Cambridge Primary (CP) Stage 1: Official CAIE Subject Disciplines & Codes
+         */
+        const cambridgeCurriculum = {
+            "Play Group": {
+                stage: "CEY Stage 1",
+                framework: "Cambridge Early Years",
+                ageRange: "Ages 2–3",
+                subtitle: "Official Cambridge Early Years Stage 1 curriculum for Play Group learners.",
+                description: "Sensory exploration, early listening, movement & playful discovery.",
+                countText: "6 Learning Areas",
+                activitiesHint: "Interactive activities for Play Group learners focusing on rhymes, sensory touch & colors.",
+                mathActivityDesc: "Match colors, sort big & small toys, and count 1 to 3 with finger games.",
+                worldActivityDesc: "Meet cute animal friends, mimic their sounds, and explore classroom textures.",
+                subjects: [
+                    {
+                        id: "cey-cll-pg",
+                        title: "Communication, Language & Literacy",
+                        curriculumArea: "Area 1 · CLL",
+                        icon: "🗣️",
+                        bg: "#fff0f7",
+                        badgeBg: "#ffe3f1",
+                        badgeColor: "#d6287c",
+                        summary: "Listening to nursery rhymes, naming familiar objects, discriminating everyday sounds, and engaging in picture talk.",
+                        topics: ["Nursery Rhymes", "Picture Talk", "Sound Listening", "First Words"],
+                        strands: ["Listening & Attention", "Speaking & Pronunciation", "Sound Discrimination"],
+                        objectives: [
+                            "Listen with sustained interest to rhythmic nursery rhymes, songs, and repetitive stories.",
+                            "Respond to familiar words, simple questions, and everyday spoken directions.",
+                            "Point to pictures in storybooks and name familiar objects and animals.",
+                            "Imitate speech sounds, vocal play, and expressive facial gestures."
+                        ],
+                        sampleActivity: "Listen to 'Are You Sleeping' and tap out the beat while pointing to animal picture cards."
+                    },
+                    {
+                        id: "cey-math-pg",
+                        title: "Mathematics",
+                        curriculumArea: "Area 2 · M",
+                        icon: "🧩",
+                        bg: "#fff9e6",
+                        badgeBg: "#ffeed0",
+                        badgeColor: "#b86200",
+                        summary: "Hands-on shape sorting, matching primary colors, big & small comparisons, and playful counting 1–3.",
+                        topics: ["Counting 1 to 3", "Big vs Small", "Color Matching", "Shapes & Blocks"],
+                        strands: ["Number Sense Play", "Spatial Awareness", "Comparison & Sorting"],
+                        objectives: [
+                            "Recognize quantities up to 3 through finger plays and real tactile toys.",
+                            "Compare objects by physical size (big vs small, tall vs short).",
+                            "Match and sort bright objects by primary colors (red, yellow, blue).",
+                            "Explore 2D sensory shapes: circle, square, triangle using soft foam blocks."
+                        ],
+                        sampleActivity: "Sort colorful plastic fruit into big baskets and little baskets."
+                    },
+                    {
+                        id: "cey-psed-pg",
+                        title: "Personal, Social & Emotional",
+                        curriculumArea: "Area 3 · PSED",
+                        icon: "🤗",
+                        bg: "#f4f0ff",
+                        badgeBg: "#e8dcff",
+                        badgeColor: "#673ab7",
+                        summary: "Expressing feelings, friendly greetings, classroom routines, and gentle sharing.",
+                        topics: ["Daily Routine", "Happy & Sad", "Gentle Sharing", "Independence"],
+                        strands: ["Self-Regulation", "Making Relationships", "Sense of Self"],
+                        objectives: [
+                            "Comfortably transition into the learning space and follow simple daily routines.",
+                            "Identify and name basic feelings like happy, calm, excited, and sad.",
+                            "Practice sharing toys with a partner with gentle teacher guidance.",
+                            "Show growing independence in taking off shoes, holding a cup, and washing hands."
+                        ],
+                        sampleActivity: "Mirror emotions game: look in the mirror and make a joyful smiling face!"
+                    },
+                    {
+                        id: "cey-uw-pg",
+                        title: "Understanding the World",
+                        curriculumArea: "Area 4 · UW",
+                        icon: "🌿",
+                        bg: "#effaff",
+                        badgeBg: "#d8f2ff",
+                        badgeColor: "#0077b6",
+                        summary: "Sensory touch, nature exploration, identifying animal sounds, and family roles.",
+                        topics: ["5 Senses", "Animal Sounds", "Nature Walks", "Family & Home"],
+                        strands: ["The Natural World", "People & Communities", "Sensory Discovery"],
+                        objectives: [
+                            "Explore the natural environment using touch, sight, smell, and hearing.",
+                            "Recognize familiar domestic animals and mimic their natural sounds.",
+                            "Talk about family members, familiar helpers, and home surroundings.",
+                            "Interact with sensory materials like water, wet sand, and textured leaves."
+                        ],
+                        sampleActivity: "Texture sensory tray: feel soft feathers, smooth stones, and bumpy pinecones."
+                    },
+                    {
+                        id: "cey-ead-pg",
+                        title: "Expressive Arts & Design",
+                        curriculumArea: "Area 5 · EAD",
+                        icon: "🎨",
+                        bg: "#fff2f0",
+                        badgeBg: "#ffdfda",
+                        badgeColor: "#d93829",
+                        summary: "Finger painting, mark making with chunky crayons, rhythm clapping, and song play.",
+                        topics: ["Finger Painting", "Chunky Crayons", "Rhythm & Clapping", "Dress-Up"],
+                        strands: ["Exploring Media & Materials", "Imaginative & Role Play", "Music & Movement"],
+                        objectives: [
+                            "Experiment with thick non-toxic paints using fingers, sponges, and palms.",
+                            "Make free circular and zig-zag marks using chunky beeswax crayons.",
+                            "Clap along with rhythm tempo in classic songs and rhymes.",
+                            "Engage in simple pretend play with costumes, stuffed animals, and toy kitchens."
+                        ],
+                        sampleActivity: "Finger paint a rainbow garden using primary colors on giant easel paper."
+                    },
+                    {
+                        id: "cey-pd-pg",
+                        title: "Physical Development",
+                        curriculumArea: "Area 6 · PD",
+                        icon: "🤸",
+                        bg: "#f1fff4",
+                        badgeBg: "#d3fbe0",
+                        badgeColor: "#1b8a4f",
+                        summary: "Balance walking, block stacking, bead threading, gross motor movement, and self-care.",
+                        topics: ["Balance Walking", "Block Stacking", "Bead Threading", "Active Play"],
+                        strands: ["Gross Motor Skills", "Fine Motor Manipulation", "Health & Self-Care"],
+                        objectives: [
+                            "Walk steadily, run with joy, and navigate around soft obstacles safely.",
+                            "Stack towers of 4 to 6 wooden blocks without toppling.",
+                            "Grasp chunky wooden beads and thread them onto a sturdy string.",
+                            "Practice hand washing with soap before snack time."
+                        ],
+                        sampleActivity: "Follow the squiggly floor tape path while carrying a soft beanbag."
+                    }
+                ]
+            },
+
+            "Nursery": {
+                stage: "CEY Stage 2",
+                framework: "Cambridge Early Years",
+                ageRange: "Ages 3–4",
+                subtitle: "Official Cambridge Early Years Stage 2 curriculum for Nursery learners.",
+                description: "Early phonics, number sense 1–10, scientific curiosity & social collaboration.",
+                countText: "6 Learning Areas",
+                activitiesHint: "Interactive activities for Nursery learners focusing on Phase 1 phonics, counting to 10 & crafts.",
+                mathActivityDesc: "Practice counting objects 1–10, compare more vs less, and create AB patterns.",
+                worldActivityDesc: "Explore plant sprouting, learn about community helpers, and test sink or float.",
+                subjects: [
+                    {
+                        id: "cey-cll-nur",
+                        title: "Communication, Language & Literacy",
+                        curriculumArea: "Area 1 · CLL",
+                        icon: "📚",
+                        bg: "#fff0f7",
+                        badgeBg: "#ffe3f1",
+                        badgeColor: "#d6287c",
+                        summary: "Phase 1 phonics, initial letter sounds (s, a, t, p, i, n), story retelling, and mark-making.",
+                        topics: ["Letter Sounds (s, a, t, p)", "Story Retelling", "Pre-Writing Marks", "Vocabulary"],
+                        strands: ["Phonics Awareness", "Emergent Reading", "Mark Making & Writing"],
+                        objectives: [
+                            "Hear and identify environmental sounds, alliteration, and initial letter sounds.",
+                            "Recognize first group phonics: /s/, /a/, /t/, /p/, /i/, /n/ with playful physical actions.",
+                            "Follow a story narrative, predict what happens next, and retell favorite scenes.",
+                            "Form controlled circles, straight lines, and zig-zag marks using beginner pencils."
+                        ],
+                        sampleActivity: "Phonics sound basket: fish out items that begin with the /s/ sound (snake, sock, sun)."
+                    },
+                    {
+                        id: "cey-math-nur",
+                        title: "Mathematics",
+                        curriculumArea: "Area 2 · M",
+                        icon: "🔢",
+                        bg: "#fff9e6",
+                        badgeBg: "#ffeed0",
+                        badgeColor: "#b86200",
+                        summary: "Counting objects up to 10 with 1-to-1 correspondence, 2D shapes, more/less, and AB patterns.",
+                        topics: ["Counting 1 to 10", "2D Shapes", "More vs Less", "AB Patterns"],
+                        strands: ["Number Sense & Counting", "Patterns & Relations", "Geometry & Comparison"],
+                        objectives: [
+                            "Count objects up to 10 with 1-to-1 touch counting correspondence.",
+                            "Recognize and name 2D shapes: circle, square, triangle, and rectangle in the environment.",
+                            "Compare sets of items to determine which has 'more' and which has 'less'.",
+                            "Create and extend alternating AB color patterns (e.g. red-blue-red-blue)."
+                        ],
+                        sampleActivity: "Help little bear count 10 honey jars and create a yellow-blue bead necklace pattern."
+                    },
+                    {
+                        id: "cey-uw-nur",
+                        title: "Understanding the World",
+                        curriculumArea: "Area 4 · UW",
+                        icon: "🌱",
+                        bg: "#effaff",
+                        badgeBg: "#d8f2ff",
+                        badgeColor: "#0077b6",
+                        summary: "Plant germination, animal habitats, community helpers, daily weather, and water science.",
+                        topics: ["Plant Sprouting", "Community Helpers", "Weather Chart", "Sink or Float"],
+                        strands: ["Living Things & Nature", "Community & People", "Physical Investigation"],
+                        objectives: [
+                            "Observe how seeds sprout with sunlight and water; care for a classroom pot plant.",
+                            "Learn about community helpers (doctors, firefighters, bakers, teachers) and their tools.",
+                            "Track the daily weather (sunny, rainy, windy, cloudy) on the morning calendar.",
+                            "Test everyday objects in a water tub to predict whether they will sink or float."
+                        ],
+                        sampleActivity: "Conduct a 'Sink or Float' experiment using an apple, a leaf, an eraser, and a coin."
+                    },
+                    {
+                        id: "cey-psed-nur",
+                        title: "Personal, Social & Emotional",
+                        curriculumArea: "Area 3 · PSED",
+                        icon: "🤝",
+                        bg: "#f4f0ff",
+                        badgeBg: "#e8dcff",
+                        badgeColor: "#673ab7",
+                        summary: "Cooperative play, turn taking, empathy for peers, self-regulation, and developing confidence.",
+                        topics: ["Turn Taking", "Helping Others", "Expressing Needs", "Calm Corner"],
+                        strands: ["Cooperation & Empathy", "Emotional Wellbeing", "Confidence & Autonomy"],
+                        objectives: [
+                            "Take turns during board games and swing play using a visual sand timer.",
+                            "Recognize when a classmate is sad or hurt and offer comfort or tell a teacher.",
+                            "Use polite phrases ('please', 'thank you', 'excuse me') during group meals.",
+                            "Practice deep balloon breathing in the classroom calm corner when overwhelmed."
+                        ],
+                        sampleActivity: "Pass the Kindness Bear: hold the teddy and say one nice thing about your friend."
+                    },
+                    {
+                        id: "cey-ead-nur",
+                        title: "Expressive Arts & Design",
+                        curriculumArea: "Area 5 · EAD",
+                        icon: "🎭",
+                        bg: "#fff2f0",
+                        badgeBg: "#ffdfda",
+                        badgeColor: "#d93829",
+                        summary: "Color mixing experiments, paper collage crafts, rhythmic percussion, and puppet role-play.",
+                        topics: ["Color Mixing", "Cut & Paste Crafts", "Percussion Shakers", "Puppet Theatre"],
+                        strands: ["Visual Arts", "Music & Tempo", "Drama & Role-Play"],
+                        objectives: [
+                            "Discover secondary colors by mixing red + yellow = orange, blue + yellow = green.",
+                            "Tear and paste colored paper strips to create textured animal collages.",
+                            "Play rhythm sticks and shakers fast and slow to match musical tempo.",
+                            "Use hand puppets to act out everyday scenarios like visiting the grocery store."
+                        ],
+                        sampleActivity: "Make colorful handprint butterflies and blend yellow and blue paint to make green wings."
+                    },
+                    {
+                        id: "cey-pd-nur",
+                        title: "Physical Development",
+                        curriculumArea: "Area 6 · PD",
+                        icon: "🏃",
+                        bg: "#f1fff4",
+                        badgeBg: "#d3fbe0",
+                        badgeColor: "#1b8a4f",
+                        summary: "Hopping on one foot, scissor cutting skills, tripod pencil grip, and healthy nutrition.",
+                        topics: ["Hopping & Skipping", "Child Scissors", "Tripod Grip", "Healthy Foods"],
+                        strands: ["Gross Motor Agility", "Fine Motor Dexterity", "Health & Hygiene"],
+                        objectives: [
+                            "Hop on one foot, march in rhythm, and jump over low hurdles with both feet.",
+                            "Safely hold child safety scissors and snip along straight lines.",
+                            "Develop a mature tripod pencil grip when coloring inside wide outlines.",
+                            "Sort food pictures into healthy fresh foods (fruits, veggies, milk) and occasional treats."
+                        ],
+                        sampleActivity: "Snip colourful paper strips to make paper chain snakes and practice the tripod grip."
+                    }
+                ]
+            },
+
+            "KG": {
+                stage: "CEY Stage 3",
+                framework: "Cambridge Early Years",
+                ageRange: "Ages 4–5",
+                subtitle: "Official Cambridge Early Years Stage 3 curriculum for KG learners.",
+                description: "Synthetic phonics, CVC blending, number bonds to 10, life cycles & inquiry.",
+                countText: "6 Learning Areas",
+                activitiesHint: "Interactive activities for KG learners focusing on CVC words, number bonds, and science.",
+                mathActivityDesc: "Solve number bonds of 10, explore 3D shapes, and play addition/subtraction games.",
+                worldActivityDesc: "Investigate the butterfly life cycle, test magnets, and explore states of water.",
+                subjects: [
+                    {
+                        id: "cey-cll-kg",
+                        title: "Communication, Language & Literacy",
+                        curriculumArea: "Area 1 · CLL",
+                        icon: "📖",
+                        bg: "#fff0f7",
+                        badgeBg: "#ffe3f1",
+                        badgeColor: "#d6287c",
+                        summary: "Systematic synthetic phonics, blending CVC words, high-frequency sight words & guided reading.",
+                        topics: ["CVC Word Blending", "Sight Words", "Letter Writing", "Early Guided Readers"],
+                        strands: ["Phonics & Decoding", "Reading Comprehension", "Early Writing & Spelling"],
+                        objectives: [
+                            "Blend sounds smoothly to read 3-letter CVC words (e.g. c-a-t -> cat, s-u-n -> sun).",
+                            "Recognize 30+ high-frequency Cambridge sight words (the, is, in, and, to, he, she).",
+                            "Form uppercase and lowercase alphabet letters correctly with proper starting points.",
+                            "Read simple decodable sentences with fluency and answer 'who', 'what', 'where' questions."
+                        ],
+                        sampleActivity: "Phonics Word Builder: roll letter dice and blend consonants and vowels to make words."
+                    },
+                    {
+                        id: "cey-math-kg",
+                        title: "Mathematics",
+                        curriculumArea: "Area 2 · M",
+                        icon: "🧮",
+                        bg: "#fff9e6",
+                        badgeBg: "#ffeed0",
+                        badgeColor: "#b86200",
+                        summary: "Numbers to 20, number bonds of 10, simple addition/subtraction, 3D shapes & analog time.",
+                        topics: ["Numbers to 20", "Number Bonds of 10", "Addition & Subtraction", "3D Shapes & Clocks"],
+                        strands: ["Number Operations", "Geometry & Measure", "Data & Logic"],
+                        objectives: [
+                            "Count, read, and write numerals up to 20; find one more and one less.",
+                            "Master number bonds that make 10 using ten-frames and counters (e.g., 7 + 3 = 10).",
+                            "Solve early addition and subtraction story problems with hands-on manipulatives.",
+                            "Identify 3D solid shapes: sphere, cube, cylinder, cone; read o'clock times on a clock face."
+                        ],
+                        sampleActivity: "Ten-frame race: fill your ten-frame with counters to solve mysterious math riddles!"
+                    },
+                    {
+                        id: "cey-uw-kg",
+                        title: "Understanding the World",
+                        curriculumArea: "Area 4 · UW",
+                        icon: "🔬",
+                        bg: "#effaff",
+                        badgeBg: "#d8f2ff",
+                        badgeColor: "#0077b6",
+                        summary: "Life cycles (butterfly & frog), states of matter, magnet attractions, seasons & simple maps.",
+                        topics: ["Butterfly Life Cycle", "Magnets & Forces", "Ice, Water & Steam", "Neighborhood Maps"],
+                        strands: ["Scientific Enquiry", "Earth & Environment", "Technology & Mapping"],
+                        objectives: [
+                            "Sequence the stages of animal life cycles: egg -> caterpillar -> chrysalis -> butterfly.",
+                            "Test everyday materials with magnets to discover magnetic vs non-magnetic objects.",
+                            "Investigate changes in matter: observe ice melting into water and boiling into steam.",
+                            "Draw and navigate a treasure map of the classroom and playground."
+                        ],
+                        sampleActivity: "Build an interactive paper plate dial showing the 4 stages of a butterfly's life cycle."
+                    },
+                    {
+                        id: "cey-psed-kg",
+                        title: "Personal, Social & Emotional",
+                        curriculumArea: "Area 3 · PSED",
+                        icon: "🌟",
+                        bg: "#f4f0ff",
+                        badgeBg: "#e8dcff",
+                        badgeColor: "#673ab7",
+                        summary: "Collaborative teamwork, resilience in problem solving, caring for nature, and empathy.",
+                        topics: ["Team Collaboration", "Problem Solving", "Caring for Nature", "Perseverance"],
+                        strands: ["Social Collaboration", "Emotional Resilience", "Global Stewardship"],
+                        objectives: [
+                            "Work harmoniously in small teams to complete multi-step building challenges.",
+                            "Show resilience and try alternative solutions when an activity is tricky.",
+                            "Understand how keeping clean surroundings protects animals and the school campus.",
+                            "Express empathy and actively include quiet or new classmates in playground games."
+                        ],
+                        sampleActivity: "Classroom Eco-Hero Challenge: sort recyclables and care for the garden flowers."
+                    },
+                    {
+                        id: "cey-ead-kg",
+                        title: "Expressive Arts & Design",
+                        curriculumArea: "Area 5 · EAD",
+                        icon: "🎨",
+                        bg: "#fff2f0",
+                        badgeBg: "#ffdfda",
+                        badgeColor: "#d93829",
+                        summary: "Multi-medium collage, clay sculpture, percussion rhythm patterns, and dramatic theatre.",
+                        topics: ["Clay Sculpting", "Rhythm & Pitch", "Dramatization", "Pattern Making"],
+                        strands: ["Visual Expression", "Music Making", "Dramatic Performance"],
+                        objectives: [
+                            "Sculpt recognizable 3D figures (animals, bowls) using air-dry clay and tools.",
+                            "Distinguish high and low pitch; clap and echo complex rhythm patterns.",
+                            "Participate in dramatizations of traditional fairy tales and cultural stories.",
+                            "Design geometric stamp patterns using carved potato stamps and colored inks."
+                        ],
+                        sampleActivity: "Stage the 'Three Little Pigs' play with character masks and homemade musical sound effects."
+                    },
+                    {
+                        id: "cey-pd-kg",
+                        title: "Physical Development",
+                        curriculumArea: "Area 6 · PD",
+                        icon: "⚡",
+                        bg: "#f1fff4",
+                        badgeBg: "#d3fbe0",
+                        badgeColor: "#1b8a4f",
+                        summary: "Dynamic relay games, spatial coordination, pencil handwriting fluency, and wellness habits.",
+                        topics: ["Relay Games", "Pencil Fluency", "Complex Mazes", "Body Wellness"],
+                        strands: ["Gross Motor Coordination", "Fine Motor Mastery", "Active Wellbeing"],
+                        objectives: [
+                            "Demonstrate agility in obstacle courses: balancing on beams, zigzag running, and catching balls.",
+                            "Write lowercase and uppercase letters with smooth continuous pencil flow.",
+                            "Navigate intricate pencil mazes and cut complex shapes cleanly with scissors.",
+                            "Understand the importance of drinking water, exercise, and getting good night's sleep."
+                        ],
+                        sampleActivity: "Olympic Obstacle Course: jump through hoops, balance on the line, and score a soft ball goal!"
+                    }
+                ]
+            },
+
+            "Class 1": {
+                stage: "Primary Stage 1",
+                framework: "Cambridge Primary (CAIE)",
+                ageRange: "Ages 5–6",
+                subtitle: "Official Cambridge Primary Stage 1 curriculum for Class 1 learners.",
+                description: "Academic foundation across English, Mathematics, Science, Global Perspectives & Computing.",
+                countText: "8 Primary Subjects",
+                activitiesHint: "Interactive activities for Class 1 learners following Cambridge Primary standards.",
+                mathActivityDesc: "Master numbers to 100, mental addition & subtraction facts, 3D shapes, and pictograms.",
+                worldActivityDesc: "Investigate plant parts, everyday materials, pushes & pulls, and day & night.",
+                subjects: [
+                    {
+                        id: "cp-eng-c1",
+                        title: "Cambridge Primary English",
+                        curriculumArea: "CAIE Primary · 0058",
+                        icon: "📘",
+                        bg: "#fff0f7",
+                        badgeBg: "#ffe3f1",
+                        badgeColor: "#d6287c",
+                        summary: "Synthetic phonics & spelling rules, sentence punctuation, reading fiction & creative stories.",
+                        topics: ["Phonics & Spelling", "Punctuation & Grammar", "Story Comprehension", "Creative Writing"],
+                        strands: ["Reading Comprehension", "Writing Composition", "Speaking & Listening", "Grammar & Punctuation"],
+                        objectives: [
+                            "Apply advanced synthetic phonics to decode unfamiliar words with consonant digraphs (ch, sh, th, ng).",
+                            "Construct punctuated sentences using capital letters, finger spaces, and full stops.",
+                            "Identify setting, main characters, and plot sequence in stories and poetry.",
+                            "Speak clearly in class presentations and listen attentively to others with respect."
+                        ],
+                        sampleActivity: "Write and illustrate a 3-sentence adventure story about a magical friendly dragon."
+                    },
+                    {
+                        id: "cp-math-c1",
+                        title: "Cambridge Primary Mathematics",
+                        curriculumArea: "CAIE Primary · 0096",
+                        icon: "📐",
+                        bg: "#fff9e6",
+                        badgeBg: "#ffeed0",
+                        badgeColor: "#b86200",
+                        summary: "Numbers & place value to 100, addition/subtraction mental math, 2D/3D shapes, and pictograms.",
+                        topics: ["Place Value to 100", "Mental Math Strategies", "2D & 3D Geometry", "Pictograms & Tallies"],
+                        strands: ["Number & Place Value", "Geometry & Measure", "Statistics & Probability", "Thinking & Working Mathematically"],
+                        objectives: [
+                            "Read, write, count and order numbers up to 100; count in 2s, 5s, and 10s forwards and backwards.",
+                            "Use mental math strategies for addition and subtraction facts within 20 and number bonds of 20.",
+                            "Identify properties of 2D shapes (sides, vertices) and 3D shapes (faces, edges).",
+                            "Collect data using tally charts and represent information using colorful pictograms."
+                        ],
+                        sampleActivity: "Create a class pictogram showing everyone's favorite fruit and calculate the most popular choice."
+                    },
+                    {
+                        id: "cp-sci-c1",
+                        title: "Cambridge Primary Science",
+                        curriculumArea: "CAIE Primary · 0097",
+                        icon: "🔬",
+                        bg: "#effaff",
+                        badgeBg: "#d8f2ff",
+                        badgeColor: "#0077b6",
+                        summary: "Living things (plants & animals), properties of materials, pushes & pulls, Earth & sky.",
+                        topics: ["Plants & Living Things", "Everyday Materials", "Forces: Push & Pull", "Day, Night & Seasons"],
+                        strands: ["Biology", "Chemistry", "Physics", "Earth & Space", "Thinking & Working Scientifically"],
+                        objectives: [
+                            "Identify and name parts of plants (roots, stem, leaves, flower) and what they need to thrive.",
+                            "Classify everyday materials (wood, plastic, metal, rock, glass) by properties like hard, soft, flexible.",
+                            "Investigate forces: explore how pushes and pulls change the movement and speed of objects.",
+                            "Observe how the Earth turns to create day and night and how seasons change temperature."
+                        ],
+                        sampleActivity: "Plant bean seeds in clear jars with paper towels to observe root and shoot emergence day by day."
+                    },
+                    {
+                        id: "cp-gp-c1",
+                        title: "Cambridge Global Perspectives",
+                        curriculumArea: "CAIE Primary · 0838",
+                        icon: "🌐",
+                        bg: "#f4f0ff",
+                        badgeBg: "#e8dcff",
+                        badgeColor: "#673ab7",
+                        summary: "Inquiry challenges on water, family cultures, caring for planet Earth, and teamwork.",
+                        topics: ["Water in Our World", "Family Traditions", "Caring for Earth", "Inquiry Questions"],
+                        strands: ["Research Skills", "Analysis & Evaluation", "Reflection & Collaboration"],
+                        objectives: [
+                            "Ask curious questions about personal, local, and global challenges.",
+                            "Explore how water is used in our homes and discuss simple ways to conserve it.",
+                            "Appreciate diversity by learning how different communities around the globe celebrate.",
+                            "Collaborate with teammates to present a shared environmental action plan."
+                        ],
+                        sampleActivity: "Design a 'Save Every Drop' poster campaign to encourage tap-closing in school."
+                    },
+                    {
+                        id: "cp-comp-c1",
+                        title: "Computing & Digital Literacy",
+                        curriculumArea: "CAIE Primary · 0059",
+                        icon: "💻",
+                        bg: "#eef7ff",
+                        badgeBg: "#d6edff",
+                        badgeColor: "#0277bd",
+                        summary: "Unplugged algorithms, sequencing commands, digital tools, and staying safe online.",
+                        topics: ["Unplugged Algorithms", "Sequential Instructions", "Digital Drawing", "Online Safety"],
+                        strands: ["Computational Thinking", "Digital Artefacts", "Online Safety & Citizenship"],
+                        objectives: [
+                            "Break down everyday tasks into step-by-step algorithms (e.g. making a sandwich, brushing teeth).",
+                            "Guide a robotic friend or screen sprite using sequential arrows (forward, turn left, turn right).",
+                            "Create digital artwork and save/organize files using basic mouse/touchpad gestures.",
+                            "Understand the basic rules of internet safety: never sharing personal information with strangers."
+                        ],
+                        sampleActivity: "Human Robot Game: write a step-by-step arrow code to steer a classmate across a grid."
+                    },
+                    {
+                        id: "cp-art-c1",
+                        title: "Cambridge Primary Art & Design",
+                        curriculumArea: "CAIE Primary · 0067",
+                        icon: "🎨",
+                        bg: "#fff2f0",
+                        badgeBg: "#ffdfda",
+                        badgeColor: "#d93829",
+                        summary: "Color wheels, drawing from observation, printmaking, textures, and famous artist studies.",
+                        topics: ["Color Wheels & Tints", "Observational Sketching", "Texture & Prints", "World Artists"],
+                        strands: ["Experiencing & Investigating", "Making & Creating", "Reflecting & Appraising"],
+                        objectives: [
+                            "Create a color wheel showing primary and secondary colors plus light tints using white.",
+                            "Sketch real objects (leaves, shells, toys) focusing on outlines and fine textures.",
+                            "Explore relief printmaking with sponges, leaves, and foam stamps.",
+                            "Look at works by famous artists (like Kandinsky or Van Gogh) and talk about lines and colors."
+                        ],
+                        sampleActivity: "Paint a vibrant Kandinsky-style concentric circle mural using primary and secondary colors."
+                    },
+                    {
+                        id: "cp-mus-c1",
+                        title: "Cambridge Primary Music",
+                        curriculumArea: "CAIE Primary · 0068",
+                        icon: "🎵",
+                        bg: "#fdf0ff",
+                        badgeBg: "#f7dcfd",
+                        badgeColor: "#9c27b0",
+                        summary: "Pitch, tempo & dynamics, steady beat, playing percussion instruments, and choral singing.",
+                        topics: ["Pitch: High & Low", "Beat & Rhythm", "Classroom Percussion", "Choral Songs"],
+                        strands: ["Making Music (Performing)", "Making Music (Composing)", "Listening & Responding"],
+                        objectives: [
+                            "Distinguish between high and low musical pitch, and loud (forte) vs quiet (piano) dynamics.",
+                            "Maintain a steady pulse while singing and play untuned percussion (triangles, drums, xylophones).",
+                            "Compose short 4-beat rhythm patterns using musical rhythm symbols.",
+                            "Listen to classical and cultural music pieces and express how the melody makes them feel."
+                        ],
+                        sampleActivity: "Form a classroom percussion orchestra and perform rhythmic call-and-response beats."
+                    },
+                    {
+                        id: "cp-pe-c1",
+                        title: "Physical Education & Wellbeing",
+                        curriculumArea: "CAIE Primary · 0069",
+                        icon: "🏅",
+                        bg: "#f1fff4",
+                        badgeBg: "#d3fbe0",
+                        badgeColor: "#1b8a4f",
+                        summary: "Fundamental movement agility, ball throwing/catching, team cooperation, and wellness.",
+                        topics: ["Movement Agility", "Throwing & Catching", "Gymnastic Balances", "Body Wellness"],
+                        strands: ["Movement Competence", "Games & Strategy", "Healthy Active Lifestyle"],
+                        objectives: [
+                            "Demonstrate agility, balance, and coordination while changing direction at speed.",
+                            "Master two-handed catching and underarm throwing towards targets with accuracy.",
+                            "Create stationary balance poses (airplane, bridge, flamingo) with core control.",
+                            "Understand how physical exercise keeps our heart healthy and boosts focus in school."
+                        ],
+                        sampleActivity: "Team Beanbag Relay: balance along a bench, hurdle cones, and toss beanbags into hoops!"
+                    }
+                ]
+            }
+        };
+
+        /**
+         * Games that practise each Cambridge Early Years area.
+         * Keyed by the area code inside the subject id (cey-<area>-<class>),
+         * so Class 1 (cp-...) subjects never get Early Years games.
+         * An entry can be limited to certain classes with `only`.
+         * Areas with no game for a class simply show none.
+         */
+        const TIYA = { href: 'play.html', icon: '🦜', name: 'Tiya’s Learning Park' };
+        const SUBJECT_GAMES = {
+            cll: [
+                { href: 'Chatterbox_Island.html', icon: '🏝️', name: 'Chatterbox Island', blurb: 'Rhymes, sounds, picture talk, and stories' },
+                { ...TIYA, blurb: 'Songs, phonics, writing letters, and letter match' }
+            ],
+            math: [
+                { href: 'Counting_Carnival.html', icon: '🎪', name: 'Counting Carnival', blurb: 'Counting, shapes, patterns, and big & small' },
+                { ...TIYA, blurb: 'Counting to 20 and number matching' }
+            ],
+            psed: [
+                { href: 'Kindness_Village.html', icon: '🏡', name: 'Kindness Village', blurb: 'Feelings, calming down, sharing, and magic words' }
+            ],
+            uw: [
+                { href: 'Wonder_Woods.html', icon: '🦔', name: 'Wonder Woods', blurb: 'Senses, animal sounds, nature walks, and family & home', only: ['pg'] },
+                { ...TIYA, blurb: 'Discover fruits, animals, flowers, and colours' }
+            ],
+            ead: [
+                { href: 'Splash_Studio.html', icon: '🐘', name: 'Splash Studio', blurb: 'Finger painting, crayon marks, mixing colours, clapping, and dress-up', only: ['pg'] },
+                { ...TIYA, blurb: 'Shapes, crayons, and colouring' }
+            ],
+            pd: [
+                { href: 'Giggle_Gym.html', icon: '🦘', name: 'Giggle Gym', blurb: 'Balance walking, block stacking, bead threading, hand washing, and active play', only: ['pg'] }
+            ]
+        };
+
+        /* An entry with `only: ['pg']` is shown for Play Group only (ids end in -pg, -nur, -kg). */
+        function gamesFor(subject) {
+            const m = /^cey-([a-z]+)-([a-z0-9]+)$/.exec(subject.id || '');
+            if (!m) return [];
+            return (SUBJECT_GAMES[m[1]] || []).filter(g => !g.only || g.only.indexOf(m[2]) >= 0);
+        }
+
+        let currentSelectedClass = "Play Group";
+        let activeSubjectData = null;
+
+        // DOM Elements
+        const classCards = document.querySelectorAll('.class-card');
+        const subjectsContainer = document.getElementById('subjects-container');
+        const subjectsBadge = document.getElementById('subjects-badge');
+        const subjectsSubtitle = document.getElementById('subjects-subtitle');
+        const curriculumStageTag = document.getElementById('curriculum-stage-tag');
+        const curriculumFrameworkDesc = document.getElementById('curriculum-framework-desc');
+        const curriculumCount = document.getElementById('curriculum-count');
+
+        const activitiesSubtitle = document.getElementById('activities-subtitle');
+        const activityWorldDesc = document.getElementById('activity-world-desc');
+
+        // Modal Elements
+        const modalOverlay = document.getElementById('subject-modal');
+        const modalCloseBtn = document.getElementById('modal-close');
+        const modalIcon = document.getElementById('modal-icon');
+        const modalTitle = document.getElementById('modal-title');
+        const modalStageBadge = document.getElementById('modal-stage-badge');
+        const modalSummary = document.getElementById('modal-summary');
+        const modalStrands = document.getElementById('modal-strands');
+        const modalObjectives = document.getElementById('modal-objectives');
+        const modalActivity = document.getElementById('modal-activity');
+        const modalGames = document.getElementById('modal-games');
+        const modalGameLinks = document.getElementById('modal-game-links');
+
+        /**
+         * Render subjects dynamically for the selected class
+         */
+        function renderSubjects(className) {
+            const data = cambridgeCurriculum[className];
+            if (!data) return;
+
+            currentSelectedClass = className;
+
+            // Update Section Header Info
+            subjectsBadge.innerHTML = `<span class="dot"></span> ${data.framework}`;
+            subjectsSubtitle.textContent = data.subtitle;
+            curriculumStageTag.textContent = data.stage;
+            curriculumFrameworkDesc.textContent = data.description;
+            curriculumCount.textContent = data.countText;
+
+            // Update Activities recommendations
+            if (activitiesSubtitle) activitiesSubtitle.textContent = data.activitiesHint;
+            if (activityWorldDesc) activityWorldDesc.textContent = data.worldActivityDesc;
+
+            // Build subject cards HTML
+            subjectsContainer.innerHTML = '';
+            subjectsContainer.classList.remove('animate-fade');
+            void subjectsContainer.offsetWidth; // trigger reflow for animation
+
+            data.subjects.forEach((subject, index) => {
+                const card = document.createElement('article');
+                card.className = 'subject animate-fade';
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-label', `View Cambridge curriculum details for ${subject.title}`);
+
+                const topicsHtml = subject.topics
+                    .map(t => `<span class="topic-tag">${t}</span>`)
+                    .join('');
+
+                const gameCount = gamesFor(subject).length;
+                const playBadge = gameCount
+                    ? `<span class="subject-play">🎮 ${gameCount === 1 ? '1 game' : gameCount + ' games'} to play</span>`
+                    : '';
+
+                card.innerHTML = `
+      <div class="subject-top">
+        <div class="icon" style="background:${subject.bg};">${subject.icon}</div>
+        <div class="subject-head-info">
+          <span class="subject-area" style="background:${subject.badgeBg};color:${subject.badgeColor};">
+            ${subject.curriculumArea}
+          </span>
+          <h3>${subject.title}</h3>
+        </div>
+      </div>
+      <p class="subject-summary">${subject.summary}</p>
+      <div class="subject-topics">${topicsHtml}</div>
+      ${playBadge}
+      <div class="subject-foot">
+        <span>${data.stage}</span>
+        <span class="subject-foot-action">Curriculum Details →</span>
+      </div>
+    `;
+
+                // Click & Keyboard handlers
+                card.addEventListener('click', () => openSubjectModal(subject, data));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openSubjectModal(subject, data);
+                    }
+                });
+
+                subjectsContainer.appendChild(card);
+            });
+        }
+
+        /**
+         * Open Cambridge curriculum modal
+         */
+        function openSubjectModal(subject, classData) {
+            activeSubjectData = subject;
+
+            modalIcon.textContent = subject.icon;
+            modalIcon.style.background = subject.bg;
+            modalTitle.textContent = subject.title;
+            modalStageBadge.innerHTML = `<span class="dot"></span> ${classData.framework} · ${classData.stage} (${classData.ageRange})`;
+            modalSummary.textContent = subject.summary;
+
+            // Render strands
+            modalStrands.innerHTML = subject.strands
+                .map(s => `<span class="strand-pill">${s}</span>`)
+                .join('');
+
+            // Render objectives
+            modalObjectives.innerHTML = subject.objectives
+                .map(obj => `<li>${obj}</li>`)
+                .join('');
+
+            // Render activity
+            modalActivity.textContent = subject.sampleActivity;
+
+            // Render games that practise this subject (Early Years only)
+            const games = gamesFor(subject);
+            modalGames.hidden = games.length === 0;
+            modalGameLinks.innerHTML = games
+                .map(g => `<a class="game-link" href="${g.href}">
+                    <span class="game-icon" aria-hidden="true">${g.icon}</span>
+                    <span class="game-text"><strong>${g.name}</strong><small>${g.blurb}</small></span>
+                    <span class="game-go" aria-hidden="true">Play ▶</span>
+                </a>`)
+                .join('');
+
+            // Show modal
+            modalOverlay.classList.add('open');
+            modalOverlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            modalCloseBtn.focus();
+        }
+
+        /**
+         * Close Cambridge curriculum modal
+         */
+        function closeSubjectModal() {
+            modalOverlay.classList.remove('open');
+            modalOverlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        // Modal event listeners
+        modalCloseBtn.addEventListener('click', closeSubjectModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeSubjectModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+                closeSubjectModal();
+            }
+        });
+
+        // Class selection click & keyboard listeners
+        classCards.forEach(card => {
+            const selectHandler = () => {
+                classCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const selectedClass = card.dataset.class;
+                renderSubjects(selectedClass);
+            };
+
+            card.addEventListener('click', selectHandler);
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectHandler();
+                }
+            });
+        });
+
+        // Navigation smooth scrolling
+        document.querySelectorAll('.nav button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const target = document.getElementById(btn.dataset.scroll);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Initial render for default class
+        renderSubjects(currentSelectedClass);
+    </script>
+</body>
+
+</html>

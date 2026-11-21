@@ -192,6 +192,10 @@ h2{margin:6px 0;font-size:clamp(26px,7vw,38px)}
 .mtile.sel{outline:5px solid var(--orange);transform:scale(1.05)}
 .mtile.lock{background:var(--good);box-shadow:inset 0 0 0 5px var(--lc,#2fcf7c)}
 .mtile.no{animation:shake .4s}
+.mtile.let{font-size:clamp(50px,14vw,76px);line-height:1}
+.mtile.pic{flex-direction:column;gap:0;font-size:clamp(40px,12vw,56px);line-height:1.05}
+.mtile.pic .pw{font-size:clamp(13px,3.6vw,17px);line-height:1.1;visibility:hidden}
+.mtile.pic.lock .pw{visibility:visible}
 .full{grid-column:1/-1;width:100%}
 
 /* discover */
@@ -819,6 +823,7 @@ const WORLDS=[
   {go:'rhymes',em:'🎵',t:'Sing Along',sub:'Rhymes',c1:'#b18cff',c2:'#7b5cff',p:'r-'},
   {go:'write',em:'✏️',t:'Write a–h',sub:'Trace & write',c1:'#4ac7ff',c2:'#2f8cff',p:'w-'},
   {go:'phonics',em:'🔤',t:'Phonics',sub:'Sounds a–e',c1:'#ffb347',c2:'#ff8a2b',p:'p-'},
+  {go:'letterMatch',em:'🔗',t:'Letter Match',sub:'Letters & pictures',c1:'#3fd6c9',c2:'#1fb3a8',p:'l-'},
   {go:'numbers',em:'🔢',t:'Numbers',sub:'Count to 20',c1:'#45d98c',c2:'#1fb86a',p:'n-'},
   {go:'discover',em:'🌈',t:'Discover',sub:'Fruits, colours & more',c1:'#ffd84a',c2:'#ffb800',p:'g-',dark:1},
   {go:'draw',em:'🎨',t:'Draw & Colour',sub:'Shapes & crayons',c1:'#ff8a8a',c2:'#ff4f6a',p:'d-'}
@@ -1027,6 +1032,55 @@ SCREENS.phonics=(_,id)=>{
   $$('#tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;sfx.pop();show();});
   onLeave(()=>{tok++;});
   show();
+};
+
+/* ===================== letter match a–h (letter ↔ picture) ===================== */
+SCREENS.letterMatch=(_,id)=>{
+  const m=shell('Letter Match',['home']);
+  let round=0;
+  m.innerHTML=`<div class="card"><div class="qtext center" id="mp">Match each letter with its picture!</div><div class="mwrap" id="mw"><svg class="mlines" id="ml"></svg><div class="mcol" id="mL"></div><div class="mcol" id="mR"></div></div><div class="row"><button class="btn gray" id="skip">Next ➡️</button></div></div>`;
+  let pairs=[],sel=null,matched=0;const COL=['#ff5a6e','#3fa7ff','#2fcf7c'];
+  const redraw=()=>{
+    const mw=$('#mw'),ml=$('#ml');if(!mw||!ml)return;const R=mw.getBoundingClientRect();
+    ml.innerHTML=pairs.map(([a,b],i)=>{const A=a.getBoundingClientRect(),B=b.getBoundingClientRect();return `<line x1="${A.right-R.left}" y1="${A.top+A.height/2-R.top}" x2="${B.left-R.left}" y2="${B.top+B.height/2-R.top}" stroke="${COL[i%3]}" stroke-width="7" stroke-linecap="round"/>`;}).join('');
+  };
+  window.addEventListener('resize',redraw);onLeave(()=>window.removeEventListener('resize',redraw));
+  const isLet=b=>b.classList.contains('let');
+  /* tapping a tile reads it out: the letter name, or the picture's word */
+  const speak=b=>say(isLet(b)?b.dataset.l.toUpperCase():LWORD[b.dataset.l][0],{rate:.8});
+  function next(){
+    if(!alive(id))return;
+    if(round>=5){
+      addStars('l-match',3);sfx.star();confetti(60);$('#skip').hidden=true;
+      $('#mw').innerHTML=`<div class="center full"><div class="bigstars">⭐⭐⭐</div><h2>${esc(pick(PRAISE))}</h2><button class="btn green" id="again">🔁 Play again</button></div>`;
+      say('You matched them all!');$('#again').onclick=()=>{round=0;next();};return;
+    }
+    pairs=[];sel=null;matched=0;$('#skip').hidden=false;
+    /* easy letters first (a–d), then a few more each round, up to a–h */
+    const pool=LETTERS.slice(0,Math.min(LETTERS.length,4+round)),left=shuffle(pool).slice(0,3);
+    let right;do{right=shuffle(left);}while(right.some((l,i)=>l===left[i])); /* never the same row, so lines always cross over */
+    $('#mw').innerHTML=`<svg class="mlines" id="ml"></svg><div class="mcol" id="mL"></div><div class="mcol" id="mR"></div>`;
+    $('#mL').innerHTML=left.map(l=>`<button class="mtile let" data-l="${l}" aria-label="Letter ${l}">${l}</button>`).join('');
+    $('#mR').innerHTML=right.map(l=>`<button class="mtile pic" data-l="${l}" aria-label="${esc(LWORD[l][0])}"><span>${LWORD[l][1]}</span><small class="pw">${esc(LWORD[l][0])}</small></button>`).join('');
+    say('Match each letter with its picture!');
+    $$('.mtile').forEach(b=>b.onclick=()=>{
+      if(b.classList.contains('lock'))return;sfx.pop();
+      if(!sel){sel=b;b.classList.add('sel');speak(b);return;}
+      if(sel===b){b.classList.remove('sel');sel=null;return;}
+      if(isLet(sel)===isLet(b)){sel.classList.remove('sel');sel=b;b.classList.add('sel');speak(b);return;}
+      if(sel.dataset.l===b.dataset.l){
+        const lt=isLet(sel)?sel:b,pc=isLet(sel)?b:sel,l=b.dataset.l;
+        [sel,b].forEach(x=>{x.classList.remove('sel');x.classList.add('lock');x.style.setProperty('--lc',COL[pairs.length%3]);});
+        pairs.push([lt,pc]);redraw();sfx.good();matched++;sel=null;
+        say(`${l.toUpperCase()} for ${LWORD[l][0]}!`,{rate:.9});
+        if(matched===3)setTimeout(async()=>{confetti(30);await say(pick(PRAISE));if(alive(id)){round++;next();}},1100);
+      }else{
+        sfx.oops();[sel,b].forEach(x=>{x.classList.add('no');setTimeout(()=>x.classList.remove('no'),450);x.classList.remove('sel');});sel=null;say('Look again!');
+      }
+    });
+  }
+  $('#skip').onclick=()=>{sfx.pop();round=Math.min(round+1,4);next();};
+  next();
 };
 
 /* ===================== numbers ===================== */
