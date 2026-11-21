@@ -35,7 +35,7 @@ h2{margin:6px 0;font-size:clamp(26px,7vw,38px)}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:8px;margin:-10px -12px 12px;padding:8px 12px;background:var(--card);box-shadow:0 4px 0 var(--line)}
 .top h1{flex:1;margin:0;text-align:center;font-size:clamp(18px,4.8vw,28px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .spacer{width:46px}
-.iconbtn{width:46px;height:46px;flex:none;border:0;border-radius:16px;background:var(--line);font-size:24px;display:grid;place-items:center}
+.iconbtn{text-decoration:none;color:inherit;width:46px;height:46px;flex:none;border:0;border-radius:16px;background:var(--line);font-size:24px;display:grid;place-items:center}
 .iconbtn:active{transform:scale(.92)}
 .starpill{background:var(--line);border-radius:999px;padding:6px 12px;font-weight:800;white-space:nowrap}
 
@@ -92,7 +92,14 @@ h2{margin:6px 0;font-size:clamp(26px,7vw,38px)}
 .world small{font-size:clamp(14px,3.6vw,18px);opacity:.92}
 .world .wstar{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.28);border-radius:999px;padding:0 10px;font-size:15px;font-weight:800}
 .world.dark{color:#4a3500}
-.foot{text-align:center;margin-top:22px}
+a.world{text-decoration:none;color:#fff}
+a.world.dark{color:#4a3500}
+.more-adventures{margin-top:34px;padding-top:26px;border-top:3px dashed var(--line)}
+.more-head{text-align:center;margin-bottom:18px}
+.more-head h2{margin:0;font-size:clamp(22px,5.8vw,30px);color:var(--ink)}
+.more-head p{margin:4px 0 0;color:var(--muted);font-weight:700;font-size:clamp(14px,3.8vw,17px)}
+.more-worlds{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:16px}
+.foot{text-align:center;margin-top:24px}
 .gear{border:0;background:var(--line);border-radius:999px;padding:8px 18px;color:var(--muted);font-weight:700}
 
 /* quiz + options */
@@ -350,7 +357,7 @@ function go(name,arg){
 }
 function shell(title,back){
   backTo=back||null;
-  $('#app').innerHTML=`<header class="top">${back?'<button class="iconbtn" data-act="back" aria-label="Back">⬅️</button>':'<span class="spacer"></span>'}<h1>${esc(title)}</h1><span class="starpill" aria-label="Stars">⭐ <b id="starTotal">${totalStars()}</b></span><button class="iconbtn" data-act="snd" aria-label="Sound on or off">${soundOn?'🔊':'🔇'}</button></header><main id="main"></main>`;
+  $('#app').innerHTML=`<header class="top"><a class="iconbtn" href="index.html" aria-label="Back to Little Scholars" title="Back to Little Scholars" style="text-decoration:none;display:grid;place-items:center;">🏠</a>${back?'<button class="iconbtn" data-act="back" aria-label="Back to Park">⬅️</button>':''}<h1>${esc(title)}</h1><span class="starpill" aria-label="Stars">⭐ <b id="starTotal">${totalStars()}</b></span><button class="iconbtn" data-act="snd" aria-label="Sound on or off">${soundOn?'🔊':'🔇'}</button></header><main id="main"></main>`;
   return $('#main');
 }
 const mascot=text=>`<div class="mascot"><button class="tiya" data-say="${esc(text)}" aria-label="Tiya the parrot">🦜</button><div class="bubble">${esc(text)}</div></div>`;
@@ -828,10 +835,28 @@ const WORLDS=[
   {go:'discover',em:'🌈',t:'Discover',sub:'Fruits, colours & more',c1:'#ffd84a',c2:'#ffb800',p:'g-',dark:1},
   {go:'draw',em:'🎨',t:'Draw & Colour',sub:'Shapes & crayons',c1:'#ff8a8a',c2:'#ff4f6a',p:'d-'}
 ];
+const MORE_WORLDS=[
+  {href:'Counting_Carnival.html',em:'🎪',t:'Counting Carnival',sub:'Numbers & shapes',c1:'#ff9a3c',c2:'#ff6622',badge:'Play ▶'},
+  {href:'Chatterbox_Island.html',em:'🏝️',t:'Chatterbox Island',sub:'Rhymes & talk',c1:'#3fd6c9',c2:'#1a9b92',badge:'Play ▶'},
+  {href:'Kindness_Village.html',em:'🏡',t:'Kindness Village',sub:'Feelings & sharing',c1:'#ff78ab',c2:'#d83878',badge:'Play ▶'},
+  {href:'Wonder_Woods.html',em:'🦔',t:'Wonder Woods',sub:'Nature & animals',c1:'#46d19a',c2:'#1b9b68',badge:'Play ▶'},
+  {href:'Splash_Studio.html',em:'🐘',t:'Splash Studio',sub:'Painting & craft',c1:'#a67cff',c2:'#7042ea',badge:'Play ▶'},
+  {href:'Giggle_Gym.html',em:'🦘',t:'Giggle Gym',sub:'Movement & games',c1:'#ffd03b',c2:'#ff9b18',badge:'Play ▶',dark:1},
+  {href:'index.html',em:'🌈',t:'Little Scholars',sub:'Cambridge Portal',c1:'#4a3b82',c2:'#271d54',badge:'Home 🏠'}
+];
 SCREENS.home=(_,id)=>{
   const m=shell('Tiya’s Learning Park',null);
   const nm=profile.name||'friend';
   m.innerHTML=`${mascot(`Hi ${nm}! What shall we play today?`)}<div class="worlds">${WORLDS.map(w=>`<button class="world${w.dark?' dark':''}" style="background:linear-gradient(160deg,${w.c1},${w.c2})" data-go="${w.go}"><span class="em">${w.em}</span><span class="wt">${w.t}</span><small>${w.sub}</small><span class="wstar">⭐ ${starsPrefix(w.p)}</span></button>`).join('')}</div>
+  <section class="more-adventures">
+    <div class="more-head">
+      <h2>🌟 More Learning Adventure Worlds</h2>
+      <p>Explore more interactive worlds from Little Scholars!</p>
+    </div>
+    <div class="more-worlds">
+      ${MORE_WORLDS.map(w=>`<a class="world${w.dark?' dark':''}" href="${w.href}" style="background:linear-gradient(160deg,${w.c1},${w.c2})"><span class="em">${w.em}</span><span class="wt">${w.t}</span><small>${w.sub}</small><span class="wstar">${w.badge}</span></a>`).join('')}
+    </div>
+  </section>
   <div class="foot"><button class="gear" id="gear">⚙️ Grown-ups (hold)</button></div>`;
   if(!greeted){greeted=true;say(`Hello ${profile.name||'friend'}! Let’s play and learn!`);}
   const g=$('#gear');let tm;

@@ -272,6 +272,10 @@ body[data-screen="welcome"] .hud{display:none}
 .scene .it.gone{opacity:.28; pointer-events:none; filter:grayscale(.5); animation:none}
 @keyframes hintPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.25)}}
 
+
+.back-corner-btn{position:fixed;top:14px;left:14px;z-index:1000;display:inline-flex;align-items:center;gap:7px;background:var(--card);color:var(--ink);border:3px solid var(--card-edge);box-shadow:0 4px 0 var(--card-edge);border-radius:999px;padding:8px 16px;font:800 15px/1 'Baloo 2','Nunito',sans-serif;text-decoration:none;transition:transform .1s,box-shadow .1s}
+.back-corner-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--card-edge)}
+body:not([data-screen="welcome"]) .back-corner-btn{display:none}
 </style>
 </head>
 <body data-screen="welcome">
@@ -286,7 +290,9 @@ body[data-screen="welcome"] .hud{display:none}
 </div>
 
 <div id="app">
+  <a class="back-corner-btn" href="index.html" aria-label="Back to Little Scholars Home" title="Back to Little Scholars Home"><span>🏠</span><span>Little Scholars</span></a>
   <header class="hud" id="hud">
+    <a class="hbtn" href="index.html" aria-label="Back to Little Scholars Home" title="Back to Little Scholars Home" style="text-decoration:none;display:grid;place-items:center;">🏠</a>
     <button class="hbtn" data-go="map" aria-label="Back to the map">🗺️</button>
     <div class="rank"><div class="rank-name" id="rankName">Little Explorer</div><div class="bar"><i id="rankBar"></i></div></div>
     <div class="starpill" aria-label="Stars collected"><span aria-hidden="true">⭐</span><b id="starCount">0</b><span aria-hidden="true">/15</span></div>
@@ -608,6 +614,7 @@ SCREENS.welcome=function(){
    +'<p class="tag">'+GAME.tagline+'</p>'
    +'<button class="btn xl" id="play">Let’s play!</button>'
    +'<button class="link" data-act="grown">For grown-ups</button>'
+   +'<a class="link" href="index.html" style="margin-top:4px;text-decoration:none;display:inline-block">🏠 Back to Little Scholars</a>'
    +'</section>';
   $('#play').addEventListener('click',()=>{Snd.init(); Snd.fanfare(); confetti(null,window.innerHeight*.45,60); go('map',{first:true});});
 };
